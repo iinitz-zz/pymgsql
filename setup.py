@@ -1,7 +1,7 @@
 from setuptools import setup
-with open('README','r') as f:
+with open('README.md','r') as f:
     readme = f.read()
-with open('HISTORY','r') as f:
+with open('HISTORY.md','r') as f:
     history = f.read()
 packages=[
 	'pymgsql'
