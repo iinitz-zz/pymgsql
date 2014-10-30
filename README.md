@@ -14,7 +14,7 @@ $ easy_install sqlobject
 
 ### Install
 ```
-$ git clone git@git.it.kmitl.ac.th:it53070080/pymgsql.git
+$ git clone https://github.com/iinitz/pymgsql.git
 $ cd pymgsql
 $ python setup.py install
 ```
