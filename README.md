@@ -2,11 +2,11 @@
 
 
 ### Require
-#### python-mysqldb
+##### python-mysqldb
 ```
 $ apt-get install python-mysqldb
 ```
-#### SQLObject
+##### SQLObject
 ```
 $ easy_install sqlobject
 ```
@@ -44,17 +44,17 @@ class Model2(Schema):
 ```
 
 
-### Create an DB object
-```python
-db=MongoSQL('mysql://DB_USERNAME:DB_PASSWORD@HOSTNAME/DB_NAME?charset=utf8')
-```
-
-
 ### Create your table
 ```python
 DB=(Model1,Model2)
 for table in DB[::-1]: table.dropTable(ifExists=True)
 for table in DB: table.createTable(ifNotExists=True)
+```
+
+
+### Create DB object
+```python
+db=MongoSQL('mysql://DB_USERNAME:DB_PASSWORD@HOSTNAME/DB_NAME?charset=utf8')
 ```
 
 
@@ -65,14 +65,14 @@ db.regis(DB)
 
 
 ### Select
-#### Format
+##### Format
 ```python
 db.tableName.find() # select all
 db.tableName.find(param) # select filter
 db.tableName.findOne(id) # select by id
 ```
 
-#### Example
+##### Example
 ```python
 a=db.model1.find({'name':'a'})
 print a
@@ -80,71 +80,71 @@ b=db.model1.findOne(1)
 print b
 ```
 
-#### Extra option
+##### Option
 ```python
 db.tableName.find(orderBy=['-id','name'])
 db.tableName.find(limit=5,reversed=True)
 ```
 
-#### Operator
-##### NOT
+##### Operator
+###### NOT
 ```python
 {'$not':{'columnName':'value'}}
 ```
 
-##### OR
+###### OR
 ```python
 {'$or':{'columnName1':'value1','columnName2':'value2'}}
 ```
 
-##### AND
+###### AND
 ```python
 {'$and':{'columnName1':'value1','columnName2':'value2'}}
 ```
 
-##### IN
+###### IN
 ```python
 {'columnName':{'$in':['value1','value2']}}
 ```
 
-##### LIKE
+###### LIKE
 ```python
 {'columnName':{'$like':'%value%'}}
 ```
 
-##### <
+###### <
 ```python
 {'columnName':{'$lt':'value'}}
 ```
 
-##### <=
+###### <=
 ```python
 {'columnName':{'$lte':'value'}}
 ```
 
-##### >
+###### >
 ```python
 {'columnName':{'$gt':'value'}}
 ```
 
-##### >=
+###### >=
 ```python
 {'columnName':{'$gte':'value'}}
 ```
 
-##### !=
+###### !=
 ```python
 {'columnName':{'$ne':'value'}}
 ```
 
 
 ### Insert 
-#### Format
+##### Format
 ```python
 db.tableName.insert(param)
 ```
 
-#### Example
+##### Example
 ```python
 c=db.model1.insert({'name':'a','lastname':'x'})
 print c
@@ -152,12 +152,12 @@ print c
 
 
 ### Update
-#### Format
+##### Format
 ```python
 db.tableName.update(id,param)
 ```
 
-#### Example
+##### Example
 ```python
 d=db.model1.update(1,{'name':'d'})
 print d
@@ -165,12 +165,12 @@ print d
 
 
 ### Delete
-#### Format
+##### Format
 ```python
 db.tableName.remove(id)
 ```
 
-#### Example
+##### Example
 ```python
 e=db.model1.remove(1)
 print e # return True if delete success else return False
