@@ -1,4 +1,4 @@
-﻿A python API for manage your SQL database (select, insert, update, delete) like pymongo by iinitz
+﻿A python API for manage your MySQL database (select, insert, update, delete) like pymongo by iinitz
 
 
 ### Require
