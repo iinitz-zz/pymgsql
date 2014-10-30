@@ -137,10 +137,10 @@ class MongoSQL:
 		self.connection=connectionForURI(uri)
 		sqlhub.processConnection=self.connection
 		self.models={}
-	def regis(self,resources):
-		if isinstance(resources,(list,tuple)):
-			for resource in resources:
-				self.regis(resource)
+	def regis(self,resource):
+		if isinstance(resource,(list,tuple)):
+			for rsc in resource:
+				self.regis(rsc)
 		else:
 			if type(resource)==declarative.DeclarativeMeta:
 				resource=Resource(resource)
