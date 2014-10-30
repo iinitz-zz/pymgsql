@@ -87,52 +87,52 @@ db.tableName.find(limit=5,reversed=True)
 ```
 
 ##### Operator
-NOT
+* NOT
 ```python
 {'$not':{'columnName':'value'}}
 ```
 
-OR
+* OR
 ```python
 {'$or':{'columnName1':'value1','columnName2':'value2'}}
 ```
 
-AND
+* AND
 ```python
 {'$and':{'columnName1':'value1','columnName2':'value2'}}
 ```
 
-IN
+* IN
 ```python
 {'columnName':{'$in':['value1','value2']}}
 ```
 
-LIKE
+* LIKE
 ```python
 {'columnName':{'$like':'%value%'}}
 ```
 
-<
+* <
 ```python
 {'columnName':{'$lt':'value'}}
 ```
 
-<=
+* <=
 ```python
 {'columnName':{'$lte':'value'}}
 ```
 
->
+* >
 ```python
 {'columnName':{'$gt':'value'}}
 ```
 
->=
+* >=
 ```python
 {'columnName':{'$gte':'value'}}
 ```
 
-!=
+* !=
 ```python
 {'columnName':{'$ne':'value'}}
 ```
