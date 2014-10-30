@@ -26,7 +26,7 @@ from pymgsql import *
 ```
 
 
-### Defined your SQL schema with Schema (like ![SQLObject](http://sqlobject.org/))
+### Defined your SQL schema with Schema (like [SQLObject](http://sqlobject.org/))
 ```python
 class Model1(Schema):
 	class sqlmeta:
