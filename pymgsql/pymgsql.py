@@ -40,7 +40,9 @@ class Resource:
 				if isinstance(v,property):
 					value=getattr(obj,k)
 					bases=type(value).__bases__
-					if isinstance(value,list) and len(value)>0 and not value[0].sqlmeta.table in l:
+					if value==None:
++						tmp[k]=None
++					elif isinstance(value,list) and len(value)>0 and not value[0].sqlmeta.table in l:
 						tmp[k]=[self.toDict(x,l) for x in value]
 					elif Schema in bases and value.sqlmeta.table in l:
 						continue
