@@ -98,7 +98,9 @@ class Resource:
 			tmp=AND(*tuple(tmp))
 		return AND(tmp,*tuple(join.values()))
 	def findObj(self,param=None,orderBy=None,limit=None,distinct=False,reversed=False):
-		return self.model.select(self.createClause(param),orderBy=orderBy,limit=limit,distinct=distinct,reversed=reversed)
+		if param:
+			param=self.createClause(param)
+		return self.model.select(param,orderBy=orderBy,limit=limit,distinct=distinct,reversed=reversed)
 	def findOneObj(self,id):
 		return self.model.get(id)
 	def insertObj(self,data):
